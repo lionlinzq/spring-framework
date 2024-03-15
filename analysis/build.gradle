@@ -5,8 +5,25 @@ plugins {
 group = 'pers.lionlinzq'
 version = '5.3.34-SNAPSHOT'
 
-//repositories {
-//    mavenCentral()
+repositories {
+    mavenCentral()
+}
+
+//dependencies {
+//    // 外部依赖可以使用这三种:
+//    implementation '外部依赖坐标' // 只对当前模块可见,常见使用
+//    api '外部依赖坐标' // 对当前模块和依赖当前模块的其他模块可见,不能引入项目内部其他模块作为依赖
+//    runtimeOnly '外部依赖坐标' // 只在运行时使用,不参与编译
+//
+//    // 内部模块依赖只能使用这一种:
+//    implementation project(':someOtherModule') // 只在编译当前模块时使用,引入项目内部其他模块依赖的方式
+//
+//    // 注解处理器等特殊场景使用:
+//    annotationProcessor '注解处理器依赖坐标'
+//    compileOnly '编译时使用但不打包的依赖坐标'
+//
+//    // 添加lint检查器依赖
+//    lintCheckers 'lint检查器依赖坐标'
 //}
 
 dependencies {
