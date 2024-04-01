@@ -1,7 +1,9 @@
 package pers.lionlinzq;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pers.lionlinzq.config.ProjectConfig;
 import pers.lionlinzq.service.IPersonService;
 
@@ -14,13 +16,8 @@ import pers.lionlinzq.service.IPersonService;
 @ComponentScan("pers.lionlinzq.*")
 public class AnalysisApplication {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnalysisApplication.class);
-		IPersonService bean = context.getBean(IPersonService.class);
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		IPersonService bean = applicationContext.getBean("chinesePerson", IPersonService.class);
 		bean.speak();
-
-		ProjectConfig projectConfig = context.getBean(ProjectConfig.class);
-		System.out.println(projectConfig.author);
-
-		
 	}
 }
