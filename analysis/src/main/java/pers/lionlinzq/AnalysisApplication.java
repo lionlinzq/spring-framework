@@ -2,6 +2,7 @@ package pers.lionlinzq;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import pers.lionlinzq.config.ProjectConfig;
 import pers.lionlinzq.service.IPersonService;
 
 /**
@@ -16,5 +17,10 @@ public class AnalysisApplication {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnalysisApplication.class);
 		IPersonService bean = context.getBean(IPersonService.class);
 		bean.speak();
+
+		ProjectConfig projectConfig = context.getBean(ProjectConfig.class);
+		System.out.println(projectConfig.author);
+
+		
 	}
 }
