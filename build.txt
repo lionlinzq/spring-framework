@@ -1,0 +1,13 @@
+使用构建版本：
+gradle=7.6.4
+
+cat ~/.gradle/setting.gradle.kts
+
+镜像源:
+pluginManagement {
+    repositories {
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        mavenLocal()
+        mavenCentral()
+    }
+}
